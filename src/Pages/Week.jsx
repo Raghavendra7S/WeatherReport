@@ -25,7 +25,7 @@ export default function Week() {
  const {unit,convertTemp}=useContext(TempContext);
   return (
     <>
-      <div className="flex gap-5 ps-4 ">
+      <div className="grid xl:grid-cols-7 md:cols-3 sm:cols-1 gap-2 md:wrap">
         {weeks.map((wek,index) =>
           <div 
           key={index}
