@@ -20,10 +20,10 @@ export function getVisibilityLabel(v){
 
 // Wind label
 export function getWindLabel(v){
-  if(v < 5) return "Calm";
-  if(v < 15) return "Light Breeze";
-  if(v < 30) return "Windy";
-  return "Strong Wind";
+  if(v < 5) return "km/h";
+  if(v < 15) return "km/h";
+  if(v < 30) return "km/h";
+  return "km/h";
 }
 
 // Cloud cover label

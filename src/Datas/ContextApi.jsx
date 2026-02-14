@@ -9,7 +9,8 @@ export default function ContextApi({children}) {
   const [hours,setHours]=useState([])
   const [weeks,setWeeks]=useState([])
    const [maindata,setmaindata]=useState({})
-
+ 
+   const [loading,setLoading]=useState(true)
   async function FecthData(city){
     console.log("api city",city)
    const url=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=EJ6UBL2JEQGYB3AA4ENASN62J&contentType=json`
@@ -27,6 +28,7 @@ export default function ContextApi({children}) {
       setHours(wrpData.days[0].hours)
       setWeeks(wrpData.days.slice(0,7))
 
+      setLoading(false);
       }
       catch{
         console.log("Data is not Fetch")
@@ -50,6 +52,7 @@ export default function ContextApi({children}) {
     <WeatherReport.Provider
  
        value={{ 
+        loading,
          wedata,
          days,
        hours,

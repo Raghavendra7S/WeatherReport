@@ -11,10 +11,10 @@ export default function HeaderLayout() {
         <section className="flex p-2 justify-between items-center">
            <div className="daysWeek flex gap-4">
             <Link to="/Today"> 
-             <h2 className="text-sm md:text-lg lg:text-4xl">Today</h2>
+             <h2 className="text-sm md:text-lg lg:text-4xl hover:text-red-600">Today</h2>
              </Link>
              <Link to="/Week">
-              <h2 className="text-sm md:text-lg lg:text-4xl">Week</h2>
+              <h2 className="text-sm md:text-lg lg:text-4xl hover:text-red-600">Week</h2>
            </Link>
            </div>
            <div className="flex gap-5 pr-5">
@@ -25,13 +25,13 @@ export default function HeaderLayout() {
              className={`text-sm md:text-lg lg:text-4xl cursor-pointer
              hover:border-3 hover:rounded-full 
              hover:border-blue-500 
-             hover:bg-gray-200 
+             hover:bg-gray-100 
               hover:p-4 hover:text-black hover:text-bolder
              ${unit==="F"?"":""}`}>°F</button></div>
              <div className="">
               <button onClick={()=>setUnit("C")}
               
-              className={`text-sm md:text-lg lg:text-4xl cursor-pointer hover:border-3 hover:rounded-full hover:border-blue-500 hover:bg-gray-200  hover:p-4 hover:text-black hover:text-bolder
+              className={`text-sm md:text-lg lg:text-4xl cursor-pointer hover:border-3 hover:rounded-full hover:border-blue-500 hover:bg-gray-100  hover:p-4 hover:text-black hover:text-bolder
                ${unit==="C"?"":""}`}>°C</button></div>
            </div>
          

@@ -25,6 +25,8 @@ export default function SideBar({ }) {
     console.log("clicked")
     if (!city) return
     FecthData(city)
+
+    setCity("") 
   }
   console.log("handlesearch", handleSearch)
   return (
@@ -36,10 +38,11 @@ export default function SideBar({ }) {
               type="serach"
               placeholder='city Name'
               value={city}
-              className="from-control border rounded-tl-lg rounded-bl-lg md:word-break lg:p-4 md:p-4 md:w-60 lg:w-90"
+              className="from-control border rounded-tl-lg rounded-bl-lg hover:bg-white md:word-break lg:p-2 md:p-2 md:w-60 xl:w-80"
               onChange={(e) => setCity(e.target.value)}
             />
-            <button onClick={handleSearch} className='border border-3 text-3xl sm:p-2 md:p-4 lg:p-6'><BsSearch /></button>
+            <button onClick={handleSearch} className='border border-1 text-3xl sm:p-2 md:p-4
+             lg:p-3 cursor-pointer rounded-tr-lg rounded-br-lg hover:bg-white hover:text-green-500 hover:text-3xl bold'><BsSearch /></button>
           </form>
         </div>
         <div className="">
@@ -47,17 +50,17 @@ export default function SideBar({ }) {
             <img src={weconditi(wedata.conditions)} alt={wedata.conditions}
               className="md:w-250 sm:w-125 lg:w-500" />
           </div>
-          <p className="md:text-1xl sm:text-2xl lg:text-6xl 
+          <p className="md:text-1xl sm:text-2xl lg:text-5xl 
          lg:pt-6 md:pt-4 sm:pt-2 sm:pl-2 md:pl-4 lg:pl-5">{convertTemp(wedata.temp)}°{unit}</p>
           <div>
             <div>
-              <h1 className="md:text-xl sm:text-2xl lg:text-3xl 
-         lg:pt-6 md:pt-4 sm:pt-2 sm:pl-2 md:pl-4 lg:pl-5">{formatTime(wedata.datetime)}</h1>
+              <h1 className="md:text-xl sm:text-2xl lg:text-2xl 
+         lg:pt-6 md:pt-4 sm:pt-2 sm:pl-2 md:pl-4 lg:pl-5">Time:{formatTime(wedata.datetime)}</h1>
             </div>
             <div className="border-t-1 border-gray-900">
-              <p className="md:text-md sm:text-1xl lg:text-2xl 
+              <p className="md:text-md sm:text-1xl lg:text-1xl 
          lg:pt-6 md:pt-4 sm:pt-2 sm:pl-2 md:pl-4 lg:pl-5">Condition:{wedata.conditions}</p>
-              <p className="md:text-md sm:text-1xl lg:text-2xl 
+              <p className="md:text-md sm:text-1xl lg:text-1xl 
          lg:pt-6 md:pt-4 sm:pt-2 sm:pl-2 md:pl-4 lg:pl-5">perc:{wedata.precip}</p>
             </div>
 
@@ -69,7 +72,7 @@ export default function SideBar({ }) {
       
       </div>
        <div className="p-4  mt-auto text-center ">
-           <h1 className="xl:text-1xl md:text-xl sm:text-md">place:{maindata.resolvedAddress}</h1>
+           <h1 className="xl:text-xl md:text-xl sm:text-md">place:{maindata.resolvedAddress}</h1>
         </div>
       </>
 
